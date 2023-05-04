@@ -1,0 +1,94 @@
+<style>
+  .main{
+    background:  rgb(218,218,218);
+    box-shadow: 12px 12px 22px rgb(53,45,42);
+  }
+  .btn1{
+      border: 1px solid;
+      border-color: black;
+      background-color: white;
+      color: Black;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn1:hover{
+      background: white;
+      color: black;
+    }
+    .btn2{
+      border: none;
+      outline: none;
+      background-color: #FF6961;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn2:hover{
+      background: red;
+      color: black;
+    }
+    .image{
+      width: 100%;
+      border-radius: 5px;
+      max-height: 600px;
+
+    }
+    .limit{
+      max-width: 800px;
+    }
+    .bt{
+      max-width: 150px;
+    }
+
+    .pet-img-tag.d-block.w-100 {
+      height: 350px;
+    }
+</style>
+
+<div class="container mx-auto limit">
+  <div class="card mx-auto">
+      <div id="carousel<%=@pet.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <%= cl_image_tag @pet.photos.first.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
+                      </div>
+                      <% @pet.photos[1..].each do |photo| %>
+                        <div class="carousel-item">
+                          <%= cl_image_tag photo.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=@pet.name%>" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=@pet.name%>" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </div>
+
+    <div class="container" >
+      <div class="row title text-center mt-3 mb-4 border-bottom">
+        <h1><%= @pet.title %></h1>
+      </div>
+    <div class="row mb-4 mx-3">
+      <div class="col-12 col-lg-6">
+        <p><h5>My name is <%= @pet.name %></h5></p>
+        <p><h5><%= @pet.age %> years old</h5></p>
+        <h6><%= @pet.description %></h6>
+      </div>
+      <div class="col-12 col-lg-6 my-auto">
+        <div class="border bg-white shadow-lg p-3 bg-body rounded date">
+          <%= render "bookings/form", booking: @booking, pet: @pet%>
+        </div>
+      </div>
+    </div>
+      <div class="row mt-3 mb-4 mx-4 d-flex">
+          <%= link_to "Back", pets_path, class: "btn btn1 bt my-1 mx-auto" %>
+
+          <%#= link_to "Edit", edit_pet_path(@pet), class: "btn btn1 bt my-1 mx-auto" %>
+          <%#= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn2 bt my-1 mx-auto" %>
+      </div>
+    </div>
+  </div>
+</div>
