@@ -1,4 +1,4 @@
-class DeslsController < ApplicationController
+class DesksController < ApplicationController
   before_action :set_desk, only: [:show, :edit, :update, :destroy]
 
   def index
