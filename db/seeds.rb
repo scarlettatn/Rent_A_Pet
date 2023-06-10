@@ -26,8 +26,6 @@ end
   desk = Desk.new(
     title: Faker::Creature::Dog.meme_phrase,
     name: Faker::Creature::Dog.name,
-    age: (1..15).to_a.sample,
-    species: Faker::Creature::Dog.breed,
     price: (10..25).to_a.sample,
     description: Faker::Creature::Dog.meme_phrase,
   )
