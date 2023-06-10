@@ -1,5 +1,4 @@
 class Desk < ApplicationRecord
-  self.table_name = 'desks'
   validates :name, presence: true
   validates :species, presence: true
   validates :title, presence: true
