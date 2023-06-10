@@ -5,26 +5,26 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @pet = Pet.find(params[:pet_id])
+    @desk = Desk.find(params[:desk_id])
     @booking = Booking.new
   end
 
   def create
-    @pet = Pet.find(params[:pet_id])
+    @desk = Desk.find(params[:desk_id])
     @booking = Booking.new(booking_params)
-    @booking.pet = @pet
+    @booking.desk = @desk
     @booking.user = current_user
     @booking.total_price = @booking.calculate_total_price
     if @booking.start_date < Date.today
-      flash[:alert] = "You can't book a pet in the past"
-      redirect_to pet_path(@pet)
+      flash[:alert] = "You can't book a desk in the past"
+      redirect_to desk_path(@desk)
     elsif @booking.end_date < @booking.start_date
-      flash[:alert] = "You can't book a pet with an end date before the start date"
-      redirect_to pet_path(@pet)
+      flash[:alert] = "You can't book a desk with an end date before the start date"
+      redirect_to desk_path(@desk)
     elsif @booking.save
       redirect_to "/dashboard", status: :see_other
     else
-      render "pets/show"
+      render "desks/show"
     end
   end
 

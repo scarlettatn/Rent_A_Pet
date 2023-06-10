@@ -1,7 +1,7 @@
 <div class="container pb-3 d-flex justify-content-center dash">
   <div class="d-flex align-items-start pt-3">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link active button-tab" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">My Pets</button>
+      <button class="nav-link active button-tab" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">My Desks</button>
       <button class="nav-link button-tab" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">My Bookings</button>
       <button class="nav-link button-tab" id="v-pills-bookmarks-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bookmarks" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Favourites</button>
     </div>
@@ -9,19 +9,19 @@
     <div class="tab-content border-left ps-3" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
 
-        <div class="container-my-pets">
+        <div class="container-my-desks">
         <div class="row">
           <div class="col">
             <div class="my-bookings">
               <h2> Bookings </h2>
               <div class="all-bookings">
-                <% @pets.each do |pet| %>
-                  <% pet.bookings.each do |booking| %>
+                <% @desks.each do |desk| %>
+                  <% desk.bookings.each do |booking| %>
                     <% if booking.confirmed == true %>
                       <div class="card-bookings">
-                        <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"card-bookings-img" %>
+                        <%= cl_image_tag desk.photos.first.key, crop: :fill, class:"card-bookings-img" %>
                         <div class="card-bookings-info">
-                          <h2><%= pet.name %> </h2>
+                          <h2><%= desk.name %> </h2>
                           <p>From <%= booking.start_date.strftime("%A, %b %d") %> until <%= booking.end_date.strftime("%A, %b %d") %>.</p>
                           <p><i class="fa-solid fa-check"></i> Confirmed</p>
                           <p>Total: €<%= booking.total_price %></p>
@@ -37,14 +37,14 @@
             <div class="my-requests">
               <h2> Requests</h2>
               <div class="all-booking">
-                <% @pets.each do |pet| %>
-                    <% pet.bookings.each do |booking| %>
+                <% @desks.each do |desk| %>
+                    <% desk.bookings.each do |booking| %>
                       <% if booking.confirmed == false %>
                         <div class="card-bookings">
-                          <%= cl_image_tag booking.pet.photos.first.key, crop: :fill, class:"card-bookings-img" %>
+                          <%= cl_image_tag booking.desk.photos.first.key, crop: :fill, class:"card-bookings-img" %>
                           <div class="card-bookings-info d-flex flex-column">
                             <div class="pt-3">
-                              <h2> <%= pet.name %> </h2>
+                              <h2> <%= desk.name %> </h2>
                               <p>From <%= booking.start_date.strftime("%A, %b %d") %> until <%= booking.end_date.strftime("%A, %b %d") %> </p>
                               <p>Price: €<%= booking.total_price %> </p>
                             </div>
@@ -77,9 +77,9 @@
               <% @bookings.each do |booking| %>
                 <div class="col-12 col-md-12 col-lg-6">
                   <div class="card-bookings">
-                      <%= cl_image_tag booking.pet.photos.first.key, crop: :fill, class:"card-bookings-img" %>
+                      <%= cl_image_tag booking.desk.photos.first.key, crop: :fill, class:"card-bookings-img" %>
                       <div class="card-bookings-info">
-                        <h2> Your booking for <%= booking.pet.name %> </h2>
+                        <h2> Your booking for <%= booking.desk.name %> </h2>
                         <p><%= booking.start_date.strftime("%A, %b %d") %></p>
                         <p><%= booking.end_date.strftime("%A, %b %d") %></p>
                         <p><%if booking.confirmed == true %>
@@ -106,13 +106,13 @@
               <% @bookmarks.each do |bookmark| %>
                   <div class="col">
                     <div class="card-bookings">
-                      <%= cl_image_tag bookmark.pet.photos.first.key, crop: :fill, class:"card-bookings-img" %>
+                      <%= cl_image_tag bookmark.desk.photos.first.key, crop: :fill, class:"card-bookings-img" %>
                       <div class="card-bookings-info d-flex flex-column">
                         <div>
-                          <h2><%= bookmark.pet.name %></h2>
+                          <h2><%= bookmark.desk.name %></h2>
                         </div>
                         <div class="confirmed d-flex flex-row justify-content-end pt-5 gap-1">
-                          <%= link_to "View pet", pet_path(bookmark.pet), class: "btn btn-primary btn-sm" %>
+                          <%= link_to "View desk", desk_path(bookmark.desk), class: "btn btn-primary btn-sm" %>
                           <%= button_to bookmark_path(bookmark), method: :delete, class: "btn btn-danger btn-sm" do %>
                             <i class="fa-solid fa-times"></i>
                           <% end %>

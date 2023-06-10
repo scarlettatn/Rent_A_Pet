@@ -1,5 +1,5 @@
-class AddAddressToPets < ActiveRecord::Migration[7.0]
+class AddAddressToDesks < ActiveRecord::Migration[7.0]
   def change
-    add_column :pets, :address, :string
+    add_column :desks, :address, :string
   end
 end

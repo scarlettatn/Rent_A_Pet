@@ -22,30 +22,30 @@
   }
 }
 
-.pet-ad:hover {
+.desk-ad:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
     text-decoration: none;
 }
 
-.pet-ad:hover .heart {
+.desk-ad:hover .heart {
   right: 8px;
 }
 
-.pet-ad {
+.desk-ad {
 
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   position: relative;
 }
 
-.pet-grid {
+.desk-grid {
   margin: 0 auto;
   padding: 16px 16px 16px 16px;
   width: 80%;
 }
 
-.pet-grid {
+.desk-grid {
   h1 {
     font-weight: bold;
     font-family: "CircularStd-Black", "Helvetica", "sans-serif";
@@ -58,13 +58,13 @@
   }
 }
 
-.pet-img-tag {
+.desk-img-tag {
   border-radius: 3px;
   object-fit: cover;
   height: 200px;
 }
 
-.pet-infos {
+.desk-infos {
   font-family: "Nunito", "Helvetica", "sans-serif";
   padding: 5px 5px 5px;
   color: #0E0000;

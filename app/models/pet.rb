@@ -1,4 +1,4 @@
-class Pet < ApplicationRecord
+class Desk < ApplicationRecord
   validates :name, presence: true
   validates :species, presence: true
   validates :title, presence: true

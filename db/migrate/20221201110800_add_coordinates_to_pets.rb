@@ -1,6 +1,6 @@
-class AddCoordinatesToPets < ActiveRecord::Migration[7.0]
+class AddCoordinatesToDesks < ActiveRecord::Migration[7.0]
   def change
-    add_column :pets, :latitude, :float
-    add_column :pets, :longitude, :float
+    add_column :desks, :latitude, :float
+    add_column :desks, :longitude, :float
   end
 end
