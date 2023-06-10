@@ -1,14 +1,14 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :pet
+  belongs_to :desk
 
   validates :user_id, presence: true
-  validates :pet_id, presence: true
+  validates :desk_id, presence: true
 
   validates :start_date, :end_date, presence: true
   validates :total_price, presence: true
 
   def calculate_total_price
-    (end_date - start_date).to_i * pet.price
+    (end_date - start_date).to_i * desk.price
   end
 end

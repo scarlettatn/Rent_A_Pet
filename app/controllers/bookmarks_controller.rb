@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new
     @bookmark.user = current_user
-    @bookmark.pet = Pet.find(params[:pet_id])
+    @bookmark.desk = Desk.find(params[:desk_id])
     @bookmark.save
     redirect_to "/dashboard", status: :see_other
   end
@@ -20,6 +20,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:pet_id)
+    params.require(:bookmark).permit(:desk_id)
   end
 end

@@ -29,9 +29,9 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-lg-6 px-5 pt-5 bg-dark bg-opacity-50 rounded">
-        <h1 class="text-center font-weight-bold py-3 mt-3">Add a new pet</h1>
+        <h1 class="text-center font-weight-bold py-3 mt-3">Add a new desk</h1>
         <h4 class="text-center">for people to view</h4>
-          <%= simple_form_for(pet) do |f| %>
+          <%= simple_form_for(desk) do |f| %>
             <%= f.error_notification %>
 
             <div class="form-inputs">
@@ -63,7 +63,7 @@
                           input_html: { multiple: true, class:"form-control my-2 p-3" } %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Add Pet", class:"btn1 mt-3 mb-3"%>
+              <%= f.button :submit, "Add Desk", class:"btn1 mt-3 mb-3"%>
             </div>
           <% end %>
       </div>

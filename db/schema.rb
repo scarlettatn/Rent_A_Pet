@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_135703) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_10_143656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,27 +44,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_135703) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "pet_id", null: false
+    t.bigint "desk_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.boolean "confirmed", default: false
     t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_bookings_on_pet_id"
+    t.index ["desk_id"], name: "index_bookings_on_desk_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "pet_id", null: false
+    t.bigint "desk_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_bookmarks_on_pet_id"
+    t.index ["desk_id"], name: "index_bookmarks_on_desk_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
-  create_table "pets", force: :cascade do |t|
+  create_table "desks", force: :cascade do |t|
     t.string "name"
     t.string "species"
     t.string "title"
@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_135703) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.index ["user_id"], name: "index_pets_on_user_id"
+    t.index ["user_id"], name: "index_desks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,9 +100,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_135703) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "pets"
+  add_foreign_key "bookings", "desks", column: "desk_id"
   add_foreign_key "bookings", "users"
-  add_foreign_key "bookmarks", "pets"
+  add_foreign_key "bookmarks", "desks", column: "desk_id"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "pets", "users"
+  add_foreign_key "desks", "users"
 end

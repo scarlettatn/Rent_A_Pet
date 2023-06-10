@@ -84,5 +84,5 @@ production:
   # database: _Rent_A_Pet_production
   # username: _Rent_A_Pet
   # password: <%= ENV["_RENT_A_PET_DATABASE_PASSWORD"] %>
-   <<: *default
+  <<: *default
   url: <%= ENV['DATABASE_URL'] %>
