@@ -8,10 +8,10 @@
 require 'faker'
 require "open-uri"
 
-Desk.destroy_all
-User.destroy_all
+#Desk.destroy_all
+#User.destroy_all
 
-20.times do
+5.times do
   User.create(
     first_name: Faker::Internet.username,
     last_name: Faker::BossaNova.artist,
@@ -24,15 +24,16 @@ end
 
 20.times do
   desk = Desk.new(
-    title: Faker::Creature::Dog.meme_phrase,
-    name: Faker::Creature::Dog.name,
+    # title: Faker::Creature::Dog.meme_phrase,
+    title: "#{Faker::Lorem.word.capitalize}, in #{Faker::Address.city}",
+    name: Faker::Name.first_name,
     price: (10..25).to_a.sample,
-    description: Faker::Creature::Dog.meme_phrase,
+    description: Faker::Lorem.sentence,
   )
   desk.user = User.all.sample
   desk.latitude = Faker::Address.latitude
   desk.longitude = Faker::Address.longitude
-  file = URI.open("https://loremflickr.com/320/240/dog")
+  file = URI.open("https://source.unsplash.com/random/320x240/?desk")
   desk.photos.attach(io: file, filename: "#{desk.name}.jpeg", content_type: "image/jpeg")
   desk.save!
 end
