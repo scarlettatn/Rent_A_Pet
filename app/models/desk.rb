@@ -5,7 +5,7 @@ class Desk < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :age, presence: true
-  validates :photos, presence: true
+  validates :photos
   has_many_attached :photos
   belongs_to :user
   has_many :bookings, dependent: :destroy
