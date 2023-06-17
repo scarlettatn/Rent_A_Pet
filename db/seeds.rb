@@ -8,7 +8,7 @@
 require 'faker'
 require "open-uri"
 
-#Desk.destroy_all
+Desk.destroy_all
 #User.destroy_all
 
 5.times do
@@ -28,6 +28,7 @@ end
     title: "#{Faker::Lorem.word.capitalize}, in #{Faker::Address.city}",
     name: Faker::Name.first_name,
     price: (10..25).to_a.sample,
+    age: (21..66).to_a.sample,
     description: Faker::Lorem.sentence,
   )
   desk.user = User.all.sample
