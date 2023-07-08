@@ -18,6 +18,8 @@
 .card-img-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 344px;
+  object-fit: cover;
 }
 
 @media (min-width: 576px) {
