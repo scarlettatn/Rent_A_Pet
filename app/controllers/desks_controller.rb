@@ -66,6 +66,6 @@ class DesksController < ApplicationController
   end
 
   def desk_params
-    params.require(:desk).permit(:name, :title, :description, :price, :age)
+    params.require(:desk).permit(:name, :title, :description, :price, :age, photos: [])
   end
 end

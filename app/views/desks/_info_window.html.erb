@@ -1,4 +1,7 @@
 <p class="p-0 m-0"><%=  link_to "#{desk.name}", desk_path(desk), style: "text-decoration: none; color: black;" %></p>
 <p class="p-0 m-0"><%= desk.price %>&euro;</p>
+
+<% if desk.photos.present? %>
 <%= cl_image_tag desk.photos.first.key, width: 50, height: 50, crop: :fill, class:"card-bookings-img" %>
+<% end %>
 <p class="p-0 m-0"><%=  link_to "more", desk_path(desk), style: "text-decoration: none; color: blue;" %></p>
