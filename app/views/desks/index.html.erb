@@ -33,12 +33,17 @@
                   <div id="carousel<%=desk.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <%= cl_image_tag desk.photos.first.key, crop: :fill, class:"desk-img-tag d-block w-100" %>
+                        <% if desk.photos.present? %>
+                          <%= cl_image_tag desk.photos.first.key, crop: :fill, class:"desk-img-tag d-block w-100" %>
+                        <% end %>
                       </div>
-                      <% desk.photos[1..].each do |photo| %>
-                        <div class="carousel-item">
-                          <%= cl_image_tag photo.key, crop: :fill, class:"desk-img-tag d-block w-100" %>
-                        </div>
+                      <%# Added lines if desk photos present to prevent errors when no photo attached %>
+                      <% if desk.photos.present? %>
+                        <% desk.photos[1..].each do |photo| %>
+                          <div class="carousel-item">
+                            <%= cl_image_tag photo.key, crop: :fill, class:"desk-img-tag d-block w-100" %>
+                          </div>
+                        <% end %>
                       <% end %>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=desk.name%>" data-bs-slide="prev">
