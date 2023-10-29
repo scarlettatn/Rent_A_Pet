@@ -54,7 +54,7 @@
                       </div>
                       <% @desk.photos[1..].each do |photo| %>
                         <div class="carousel-item">
-                          <%# <%=  photo.key, crop: :fill, class:"desk-img-tag d-block w-100" %> %>
+                          <%# <%=  photo.key, crop: :fill, class:"" %> %>
                           <%= cl_image_tag photo.key, { crop: :fill, class: "desk-img-tag d-block w-100" } %>
                         </div>
                       <% end %>

@@ -33,10 +33,12 @@
       <div class="col-lg-6 px-5 pt-5 bg-dark bg-opacity-50 rounded">
         <h1 class="text-center font-weight-bold py-3 mt-3">Add a new desk</h1>
         <h4 class="text-center">for people to view</h4>
+
           <%= simple_form_for(desk) do |f| %>
             <%= f.error_notification %>
 
             <div class="form-inputs">
+
               <%= f.input :title,
                           required: true,
                           autofocus: true,
@@ -49,10 +51,14 @@
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "age", class:"form-control my-2 p-3" } %>
-              <%= f.input :description, as: :trix_editor, input_html: { value: f.object.description.to_s.html_safe },
+
+              <%= f.input :description, as: :trix_editor,
+                          input_html: { value: f.object.description.to_s.html_safe },
                           required: true,
                           autofocus: true,
+                          wrapper_html: { data: { no_escape: true } },
                           input_html: { autocomplete: "description", class:"form-control my-2 p-3" } %>
+
               <%= f.input :price,
                           required: true,
                           autofocus: true,
