@@ -40,3 +40,38 @@
   border-radius: 10px;
   box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
 }
+
+.search-text{
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.desk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.desk-ad {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  height: 100%;
+}
+
+.carousel {
+  position: relative;
+  height: 70%;
+}
+
+.desk-infos {
+  position: relative;
+  height: 30%;
+}
+
+@media (min-width: 992px) {
+	.desk-ad {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
