@@ -1,9 +1,9 @@
 <div class="home">
   <div>
       <div class="home-bar">
-        <div class="home-bar-item"><button type="button" class="input-group-text border-0"><i class="fa-solid fa-plus"></i><%= link_to " New Desk", new_desk_path%></button></div>
+        <div class="home-bar-item"><button type="button" class="input-group-text border-0"><i class="fa-solid fa-plus"></i><%= link_to " New Desk", new_desk_path%></button>
+        </div>
         <div class="home-bar-item">
-
         <form class="input-group rounded">
           <input class="form-control rounded" name="query" type="search" placeholder="Search" autocomplete="off" aria-label="Search" value="<%= params[:query] %> ">
           <button class="input-group-text border-0" type="submit">Search</button>
@@ -26,6 +26,7 @@
 
         <div class="desk-ad">
             <%# IMAGE %>
+
               <%= link_to desk_path(desk) do %>
 
                 <div class="carousel">
@@ -48,6 +49,8 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                   </div>
+                </div>
+
 
 
             <%#  TEXT %>
@@ -61,7 +64,7 @@
                       <p><span style="font-weight: 700;"><%= desk.price %>&euro;</span> day</p>
                   </div>
 
-                </div>
+
               <%# End Desk-path %>
               <% end %>
             </div>
@@ -76,6 +79,7 @@
   <div style="width: 80%; height: 300px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>
