@@ -58,6 +58,7 @@
   flex-direction: column;
   padding: 5px;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .carousel {
@@ -68,8 +69,15 @@
   position: relative;
 }
 
-@media (min-width: 992px) {
-	.desk-ad {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
+
+@media(max-width: 992px) {
+  .desk-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .desk-grid {
+    grid-template-columns: 1fr;
+  }
 }
