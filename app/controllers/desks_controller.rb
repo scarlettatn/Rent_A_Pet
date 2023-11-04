@@ -5,7 +5,7 @@ class DesksController < ApplicationController
     # @desks = Desk.all
     if params[:query].present?
       @query = params[:query]
-      @desks = Desk.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      @desks = Desk.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @desks = Desk.all
     end

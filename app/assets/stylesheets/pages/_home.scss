@@ -3,6 +3,15 @@
   object-fit: cover;
 }
 
+// @media(max-width: 892px) {
+//   .card-category {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+
+
+
 .desk {
   font-size: 30px;
   font-weight: 500;
@@ -40,6 +49,9 @@
   border-radius: 10px;
   box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
 }
+
+
+//INDEX DESKS PAGE//
 
 .search-text{
   width: 80%;
