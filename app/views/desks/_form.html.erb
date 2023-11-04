@@ -46,11 +46,16 @@
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "name", class:"form-control my-2 p-3" } %>
-              <%= f.input :description,
+              <%# <%= f.input :description,
                           required: true,
                           autofocus: true,
                           wrapper_html: { data: { no_escape: true } },
                           input_html: { autocomplete: "description", class:"form-control my-2 p-3" } %>
+              <%= f.input :description,
+                          required: true,
+                          autofocus: true,
+                          as: :rich_text_area,
+                          input_html: { autocomplete: "description", class: "form-control my-2 p-3" } %>
               <%= f.input :price,
                           required: true,
                           autofocus: true,

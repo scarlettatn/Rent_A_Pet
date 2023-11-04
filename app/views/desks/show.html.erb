@@ -76,6 +76,8 @@
       <div class="col-12 col-lg-6">
         <p><h5>My name is <%= @desk.name %></h5></p>
         <h6><%= @desk.description %></h6>
+        <%= @desk.description.html_safe if @desk.description.present? %>
+
       </div>
       <div class="col-12 col-lg-6 my-auto">
         <div class="border bg-white shadow-lg p-3 bg-body rounded date">
