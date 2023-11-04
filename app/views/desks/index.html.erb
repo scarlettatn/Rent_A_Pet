@@ -1,35 +1,35 @@
 <div class="home">
   <div>
       <div class="home-bar">
-        <div class="home-bar-item"><button type="button" class="input-group-text border-0"><i class="fa-solid fa-plus"></i><%= link_to " New Desk", new_desk_path%></button></div>
+        <div class="home-bar-item"><button type="button" class="input-group-text border-0"><i class="fa-solid fa-plus"></i><%= link_to " New Desk", new_desk_path%></button>
+        </div>
         <div class="home-bar-item">
-
         <form class="input-group rounded">
           <input class="form-control rounded" name="query" type="search" placeholder="Search" autocomplete="off" aria-label="Search" value="<%= params[:query] %> ">
           <button class="input-group-text border-0" type="submit">Search</button>
         </form>
-
-
         </div>
       </div>
 
-    <div class="desk-grid">
-
+      <div class="search-text">
        <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @desks.count %> desks matching your query on our website.</p>
         <% else %>
-
           <p>Find your next home office on the go among our <strong><%= @desks.count %></strong> homes</p>
         <% end %>
+      </div>
 
 
-        <div class="row">
+
+      <div class="desk-grid">
           <% @desks.each do |desk| %>
 
-        <div class="col-12 col-sm-6 col-md-3 mb-3">
+        <div class="desk-ad">
+            <%# IMAGE %>
 
               <%= link_to desk_path(desk) do %>
-                <div class="desk-ad mb-3">
+
+                <div class="carousel">
                   <div id="carousel<%=desk.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
@@ -54,27 +54,37 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                   </div>
+                </div>
 
+
+
+            <%#  TEXT %>
                   <div class="desk-infos">
                       <%= link_to desk_bookmarks_path(desk), data: { "turbo-method": :post }, class: "heart" do %>
                         <i class="fa-regular fa-heart"></i>
                       <% end %>
                       <p><%= desk.title %></p>
                       <h3><%= desk.name %></h3>
-                      <hr>
+                       <hr>
                       <p><span style="font-weight: 700;"><%= desk.price %>&euro;</span> day</p>
                   </div>
-                </div>
+
+
+              <%# End Desk-path %>
               <% end %>
             </div>
+          <%# End ofdesk ad %>
           <% end %>
         </div>
-    </div>
+        <%# end of desk grid %>
   </div>
+
+
 
   <div style="width: 80%; height: 300px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>

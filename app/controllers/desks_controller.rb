@@ -5,7 +5,7 @@ class DesksController < ApplicationController
     # @desks = Desk.all
     if params[:query].present?
       @query = params[:query]
-      @desks = Desk.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      @desks = Desk.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @desks = Desk.all
     end
@@ -15,7 +15,7 @@ class DesksController < ApplicationController
         lat: desk.latitude,
         lng: desk.longitude,
         info_window: render_to_string(partial: "info_window", locals: { desk: desk }),
-        image_url: helpers.asset_url("paw_vector.png")
+        image_url: helpers.asset_url("pin_vector.png")
       }
     end
   end

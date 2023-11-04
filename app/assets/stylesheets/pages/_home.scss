@@ -3,6 +3,15 @@
   object-fit: cover;
 }
 
+// @media(max-width: 892px) {
+//   .card-category {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+
+
+
 .desk {
   font-size: 30px;
   font-weight: 500;
@@ -39,4 +48,48 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
+}
+
+
+//INDEX DESKS PAGE//
+
+.search-text{
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.desk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.desk-ad {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.carousel {
+  position: relative;
+}
+
+.desk-infos {
+  position: relative;
+}
+
+
+@media(max-width: 992px) {
+  .desk-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .desk-grid {
+    grid-template-columns: 1fr;
+  }
 }

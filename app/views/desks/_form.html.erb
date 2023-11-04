@@ -47,18 +47,11 @@
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "name", class:"form-control my-2 p-3" } %>
-              <%= f.input :age,
-                          required: true,
-                          autofocus: true,
-                          input_html: { autocomplete: "age", class:"form-control my-2 p-3" } %>
-
-              <%= f.input :description, as: :trix_editor,
-                          input_html: { value: f.object.description.to_s.html_safe },
+              <%= f.input :description,
                           required: true,
                           autofocus: true,
                           wrapper_html: { data: { no_escape: true } },
                           input_html: { autocomplete: "description", class:"form-control my-2 p-3" } %>
-
               <%= f.input :price,
                           required: true,
                           autofocus: true,

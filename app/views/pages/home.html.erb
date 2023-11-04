@@ -24,23 +24,30 @@
     <div class="card border-0">
       <%= image_tag "look_for_a_desk.jpg", class: "card-img-top" %>
       <div class="card-body">
-        <p class="card-text">Look for a workspace</p>
+        <%= link_to new_desk_path do %>
+          <p class="card-text">List your workspace</p>
+        <% end %>
       </div>
     </div>
 
     <div class="card border-0">
       <%= image_tag "make_an_appointment.jpg", class: "card-img-top" %>
-      <div class="card-body">
-        <p class="card-text">Make a booking</p>
-      </div>
+        <div class="card-body">
+          <p class="card-text">Make a booking</p>
+        </div>
     </div>
 
-    <div class="card border-0">
-      <%= image_tag "new_friend.jpg", class: "card-img-top" %>
-      <div class="card-body">
-        <p class="card-text">Find your dream workspace</p>
+
+      <div class="card border-0">
+        <%= link_to desks_path do %>
+          <%= image_tag "new_friend.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text">Find your dream workspace</p>
+          </div>
+        <% end %>
       </div>
-    </div>
+
+
   </div>
   <div class="home-text">
   <p>Welcome to DeskStay, your ultimate destination for inspiring workspaces and productive environments. Whether you're a freelancer, entrepreneur, or remote worker, we've got the perfect desk space waiting for you.</p>

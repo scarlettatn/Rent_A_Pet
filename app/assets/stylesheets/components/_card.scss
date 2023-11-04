@@ -1,6 +1,13 @@
 .card {
   border-radius: 10px;
   box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
+  a {
+    text-decoration: none !important;
+    color: $gray;
+  }
+  a:hover {
+    color: lightgray;
+  }
 }
 
 .card-category {
@@ -22,14 +29,20 @@
   object-fit: cover;
 }
 
-@media (min-width: 576px) {
+// @media (min-width: 576px) {
+//   .card-category {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .card-category {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+@media(max-width: 768px) {
   .card-category {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 768px) {
-  .card-category {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 }
