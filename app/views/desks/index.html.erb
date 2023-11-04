@@ -30,9 +30,11 @@
               <%= link_to desk_path(desk) do %>
 
                 <div class="carousel">
+
                   <div id="carousel<%=desk.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
+
                         <% if desk.photos.present? %>
                           <%= cl_image_tag desk.photos.first.key, crop: :fill, class:"desk-img-tag d-block w-100" %>
                         <% end %>
@@ -63,7 +65,7 @@
                       <%= link_to desk_bookmarks_path(desk), data: { "turbo-method": :post }, class: "heart" do %>
                         <i class="fa-regular fa-heart"></i>
                       <% end %>
-                      <p><%= desk.title %></p>
+                      <p><%= (desk.title&.slice(0, 22) || desk.title) + (desk.title.size > 22 ? '..' : '') %></p>
                       <h3><%= desk.name %></h3>
                        <hr>
                       <p><span style="font-weight: 700;"><%= desk.price %>&euro;</span> day</p>

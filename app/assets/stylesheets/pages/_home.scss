@@ -79,6 +79,9 @@
 
 .desk-infos {
   position: relative;
+  .fa-heart::before {
+    color: $gray;
+  }
 }
 
 
