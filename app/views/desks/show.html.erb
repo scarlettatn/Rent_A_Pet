@@ -75,11 +75,10 @@
     <div class="row mb-4 mx-3">
       <div class="col-12 col-lg-6">
         <p><h5>My name is <%= @desk.name %></h5></p>
-        <h6><%= @desk.description %></h6>
         <%= @desk.description.html_safe if @desk.description.present? %>
 
       </div>
-      <div class="col-12 col-lg-6 my-auto">
+      <div class="col-12 col-lg-6">
         <div class="border bg-white shadow-lg p-3 bg-body rounded date">
           <%= render "bookings/form", booking: @booking, desk: @desk%>
         </div>
@@ -88,8 +87,8 @@
       <div class="row mt-3 mb-4 mx-4 d-flex">
           <%= link_to "Back", desks_path, class: "btn btn1 bt my-1 mx-auto" %>
 
-          <%#= link_to "Edit", edit_desk_path(@desk), class: "btn btn1 bt my-1 mx-auto" %>
-          <%#= link_to "Delete", desk_path(@desk), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn2 bt my-1 mx-auto" %>
+          <%= link_to "Edit", edit_desk_path(@desk), class: "btn btn1 bt my-1 mx-auto" %>
+          <%= link_to "Delete", desk_path(@desk), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn2 bt my-1 mx-auto" %>
       </div>
     </div>
   </div>
