@@ -3,6 +3,7 @@ const webpack = require("webpack")
 
 module.exports = {
   mode: "production",
+  performance: { hints: false },
   devtool: "source-map",
   entry: {
     application: "./app/javascript/application.js"
