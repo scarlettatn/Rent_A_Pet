@@ -1,7 +1,7 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: my_app_render
+    databaseName: my_app_render_zsn3
     user: my_app_render
 
 services:
