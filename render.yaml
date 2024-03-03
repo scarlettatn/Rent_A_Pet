@@ -3,6 +3,7 @@ databases:
     ipAllowList: []
     databaseName: my_app_render_zsn3
     user: my_app_render
+    password: NcA6vgHotTEM3nXF5JFqp865aflZZ2mA
 
 services:
   - type: web
