@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: _Rent_A_Pet_development
-    user: m_Rent_A_Pet
+    databaseName: my_app_render
+    user: my_app_render
 
 services:
   - type: web
