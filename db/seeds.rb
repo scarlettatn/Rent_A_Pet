@@ -28,7 +28,7 @@ Desk.destroy_all
     title: "#{Faker::Adjective.positive.capitalize} Desk in #{Faker::Address.city}",
     name: Faker::Name.first_name,
     price: (10..25).to_a.sample,
-    age: (21..66).to_a.sample,
+    # age: (21..66).to_a.sample,
     address: Faker::Address.city,
     description: Faker::Lorem.sentence,
   )
