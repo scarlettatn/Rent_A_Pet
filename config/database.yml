@@ -87,17 +87,8 @@ production:
   # <<: *default
   # url: <%= ENV['DATABASE_URL'] %>
 
-  # <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
-  # database: my_app_render_production
-  # username: my_app_render
-  # # password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
-
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: my_app_render_zsn3
   username: my_app_render
-  password: NcA6vgHotTEM3nXF5JFqp865aflZZ2mA
-  host: localhost
-  port: 5432
+  password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
