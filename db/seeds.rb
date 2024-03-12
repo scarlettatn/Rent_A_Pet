@@ -30,7 +30,7 @@ Desk.destroy_all
     price: (10..25).to_a.sample,
     # age: (21..66).to_a.sample,
     address: Faker::Address.city,
-    description: Faker::Lorem.sentence,
+    description: Faker::Lorem.sentence
   )
   desk.user = User.all.sample
   desk.latitude = Faker::Address.latitude
