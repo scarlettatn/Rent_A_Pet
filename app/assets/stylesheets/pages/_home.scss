@@ -9,7 +9,17 @@
 //   }
 // }
 
-
+.btn.btn-outline-dark.desk {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #212529;
+  --bs-btn-active-bg: #212529;
+  --bs-btn-active-border-color: #212529;
+}
 
 
 .desk {
